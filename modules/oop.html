@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Module 5: Object-Oriented Programming</title>
+</head>
+<body>
+    <h1>Module 5: Object-Oriented Programming (OOP)</h1>
+    <p>In this module, you'll learn about classes, objects, attributes, methods, and inheritance.</p>
+    <pre>
+class Robot:
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+        self.battery = 100
+
+    def move_forward(self):
+        if self.battery > 0:
+            print(f"{self.name} is moving forward.")
+            self.battery -= 10
+        else:
+            print(f"{self.name} has no battery left!")
+    </pre>
+    <p><a href="../index.html">Back to Home</a></p>
+</body>
+</html>

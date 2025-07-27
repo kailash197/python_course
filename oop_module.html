@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OOP Module</title>
+</head>
+<body>
+    <h1>Module 5: Object-Oriented Programming (OOP)</h1>
+    <p>Learn how to create classes and objects to simulate robots!</p>
+    <pre>
+class Robot:
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+        self.battery = 100
+
+    def move_forward(self):
+        if self.battery > 0:
+            print(f"{self.name} is moving forward.")
+            self.battery -= 10
+        else:
+            print(f"{self.name} has no battery left!")
+
+    def recharge(self):
+        self.battery = 100
+        print(f"{self.name} is fully recharged!")
+    </pre>
+</body>
+</html>
