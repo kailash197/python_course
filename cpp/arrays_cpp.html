@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays in C++14/17</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h1, h2 { color: #2c3e50; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Arrays in C++14/17</h1>
+    <p>Arrays are a fundamental data structure in C++ used to store collections of elements of the same type. They are particularly useful in robotics for storing sensor data, control parameters, and more.</p>
+
+    <h2>1. Definition and Syntax</h2>
+    <p>An array is a fixed-size sequence of elements of the same type.</p>
+    <pre><code>int sensorValues[5];</code></pre>
+
+    <h2>2. Types of Arrays</h2>
+    <h3>One-Dimensional Arrays</h3>
+    <pre><code>float distances[3] = {1.2, 2.5, 3.8};</code></pre>
+
+    <h3>Two-Dimensional Arrays</h3>
+    <pre><code>int grid[2][3] = {{1, 2, 3}, {4, 5, 6}};</code></pre>
+
+    <h3>Dynamic Arrays</h3>
+    <p>Using pointers and dynamic memory allocation:</p>
+    <pre><code>int* data = new int[10];</code></pre>
+
+    <h2>3. Usage in Robotics</h2>
+    <ul>
+        <li>Storing sensor readings (e.g., LIDAR, ultrasonic)</li>
+        <li>Maintaining control signal history</li>
+        <li>Representing grid maps or occupancy grids</li>
+    </ul>
+
+    <h2>4. Best Practices</h2>
+    <ul>
+        <li>Use <code>std::array</code> or <code>std::vector</code> for safer and more flexible arrays</li>
+        <li>Always check bounds when accessing array elements</li>
+        <li>Free dynamically allocated memory using <code>delete[]</code></li>
+    </ul>
+
+    <h2>5. Code Example</h2>
+    <pre><code>
+#include &lt;iostream&gt;
+#include &lt;array&gt;
+
+int main() {
+    std::array&lt;float, 5&gt; sensorData = {0.5, 1.2, 0.8, 1.5, 2.0};
+    for (float value : sensorData) {
+        std::cout &lt;&lt; "Sensor reading: " &lt;&lt; value &lt;&lt; std::endl;
+    }
+    return 0;
+}
+    </code></pre>
+
+    <p>This example uses <code>std::array</code> for safer array handling in C++14/17.</p>
+</body>
+</html>

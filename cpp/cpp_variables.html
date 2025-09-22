@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>C++14/17 Core Concepts - Variables</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1, h2 { color: #2c3e50; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-left: 4px solid #3498db; }
+    </style>
+</head>
+<body>
+    <h1>Variables in C++14/17</h1>
+
+    <h2>Definition</h2>
+    <p>A <strong>variable</strong> in C++ is a named storage that programs can manipulate. Each variable in C++ has a specific type, which determines the size and layout of the variable's memory.</p>
+
+    <h2>Types of Variables</h2>
+    <ul>
+        <li><strong>int</strong> - Integer values</li>
+        <li><strong>float</strong>, <strong>double</strong> - Floating-point numbers</li>
+        <li><strong>char</strong> - Character type</li>
+        <li><strong>bool</strong> - Boolean values (true/false)</li>
+        <li><strong>auto</strong> - Type inference (C++11 and later)</li>
+        <li><strong>const</strong> - Constant values</li>
+    </ul>
+
+    <h2>Syntax Examples</h2>
+    <pre><code>int age = 25;
+float pi = 3.14;
+char grade = 'A';
+bool isPassed = true;
+auto name = "Kailash";</code></pre>
+
+    <h2>Scope and Lifetime</h2>
+    <p>
+        <strong>Scope</strong> refers to the region of the program where the variable is accessible. <br>
+        <strong>Lifetime</strong> refers to how long the variable exists in memory.
+    </p>
+    <ul>
+        <li><strong>Local variables</strong> - Declared inside functions or blocks</li>
+        <li><strong>Global variables</strong> - Declared outside all functions</li>
+        <li><strong>Static variables</strong> - Retain value between function calls</li>
+    </ul>
+
+    <h2>Best Practices</h2>
+    <ul>
+        <li>Use meaningful variable names</li>
+        <li>Initialize variables before use</li>
+        <li>Prefer <code>auto</code> for type inference when it improves readability</li>
+        <li>Use <code>const</code> for values that should not change</li>
+    </ul>
+
+    <h2>Illustrative Code Snippets</h2>
+    <pre><code>// Example 1: Local variable
+void greet() {
+    std::string message = "Hello, World!";
+    std::cout << message << std::endl;
+}
+
+// Example 2: Static variable
+void counter() {
+    static int count = 0;
+    count++;
+    std::cout << "Count: " << count << std::endl;
+}
+
+// Example 3: Const variable
+const double gravity = 9.81;</code></pre>
+
+</body>
+</html>

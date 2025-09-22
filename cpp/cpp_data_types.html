@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>C++14/17 Core Concepts - Data Types</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1, h2, h3 { color: #2c3e50; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-left: 4px solid #ccc; }
+        table { border-collapse: collapse; width: 80%; margin: 20px 0; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #eaeaea; }
+    </style>
+</head>
+<body>
+    <h1>Data Types in C++14/17</h1>
+    <p>Data types in C++ define the type of data a variable can hold. They are essential for memory allocation and type safety in programs.</p>
+
+    <h2>Categories of Data Types</h2>
+    <ul>
+        <li><strong>Primitive (Fundamental) Types:</strong> int, float, char, bool, double, void</li>
+        <li><strong>Derived Types:</strong> Arrays, Pointers, References, Functions</li>
+        <li><strong>User-defined Types:</strong> Struct, Class, Union, Enum, Typedef</li>
+    </ul>
+
+    <h2>Primitive Data Types</h2>
+    <table>
+        <tr><th>Type</th><th>Description</th><th>Typical Size</th><th>Example</th></tr>
+        <tr><td>int</td><td>Integer numbers</td><td>4 bytes</td><td><code>int age = 25;</code></td></tr>
+        <tr><td>float</td><td>Floating-point numbers</td><td>4 bytes</td><td><code>float pi = 3.14f;</code></td></tr>
+        <tr><td>double</td><td>Double-precision floating-point</td><td>8 bytes</td><td><code>double g = 9.81;</code></td></tr>
+        <tr><td>char</td><td>Single character</td><td>1 byte</td><td><code>char grade = 'A';</code></td></tr>
+        <tr><td>bool</td><td>Boolean value</td><td>1 byte</td><td><code>bool isReady = true;</code></td></tr>
+    </table>
+
+    <h2>Derived Data Types</h2>
+    <pre><code>int numbers[5] = {1, 2, 3, 4, 5};  // Array
+int* ptr = &numbers[0];           // Pointer
+int& ref = numbers[0];            // Reference</code></pre>
+
+    <h2>User-defined Data Types</h2>
+    <pre><code>struct Robot {
+    int id;
+    float battery;
+};
+
+enum Direction { NORTH, SOUTH, EAST, WEST };
+
+class Motor {
+public:
+    void start();
+};</code></pre>
+
+    <h2>Best Practices</h2>
+    <ul>
+        <li>Use <code>auto</code> for type inference when appropriate.</li>
+        <li>Prefer <code>constexpr</code> for compile-time constants.</li>
+        <li>Use <code>enum class</code> instead of traditional enums for type safety.</li>
+        <li>Initialize variables at the point of declaration.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Understanding data types is fundamental to writing efficient and safe C++ code. Mastery of these types enables better memory management and program design.</p>
+</body>
+</html>

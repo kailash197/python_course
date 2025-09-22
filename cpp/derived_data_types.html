@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Derived Data Types in C++14/17</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1, h2 { color: #2c3e50; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-left: 4px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Derived Data Types in C++14/17</h1>
+    <p>Derived data types are built from fundamental data types and are essential for building complex programs, especially in robotics where data structures and memory management are critical.</p>
+
+    <h2>1. Arrays</h2>
+    <p>An array is a collection of elements of the same type stored in contiguous memory locations.</p>
+    <pre><code>int distances[5] = {10, 20, 30, 40, 50};</code></pre>
+    <p><strong>Use in Robotics:</strong> Storing sensor readings like distance measurements from ultrasonic sensors.</p>
+
+    <h2>2. Pointers</h2>
+    <p>Pointers store the memory address of another variable. They are powerful for dynamic memory management and interfacing with hardware.</p>
+    <pre><code>int speed = 100;
+int* ptr = &speed;
+std::cout &lt;&lt; *ptr; // Outputs 100</code></pre>
+    <p><strong>Use in Robotics:</strong> Accessing hardware registers or dynamically allocated sensor data.</p>
+
+    <h2>3. References</h2>
+    <p>A reference is an alias for another variable. It must be initialized when declared and cannot be changed to refer to another variable.</p>
+    <pre><code>int velocity = 50;
+int& ref = velocity;
+ref = 60; // velocity is now 60</code></pre>
+    <p><strong>Use in Robotics:</strong> Efficient parameter passing in functions controlling actuators or processing sensor data.</p>
+
+    <h2>4. Functions</h2>
+    <p>Functions are blocks of code that perform specific tasks. They can return values and accept parameters.</p>
+    <pre><code>double computeDistance(double speed, double time) {
+    return speed * time;
+}</code></pre>
+    <p><strong>Use in Robotics:</strong> Modularizing control logic, such as computing distance traveled or PID control routines.</p>
+
+    <h2>Best Practices</h2>
+    <ul>
+        <li>Use <code>std::array</code> or <code>std::vector</code> for safer array handling.</li>
+        <li>Prefer smart pointers (<code>std::unique_ptr</code>, <code>std::shared_ptr</code>) over raw pointers.</li>
+        <li>Use references for efficient and safe parameter passing.</li>
+        <li>Keep functions short, focused, and reusable.</li>
+    </ul>
+
+    <p>Mastering these derived types is crucial for writing efficient and maintainable robotics software in C++.</p>
+</body>
+</html>

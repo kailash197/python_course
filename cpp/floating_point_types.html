@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Floating-Point Types in C++14/17</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1, h2 { color: #2c3e50; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 4px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Floating-Point Types in C++14/17</h1>
+
+    <h2>Overview</h2>
+    <p>Floating-point types are used to represent real numbers (numbers with fractional parts). In C++, the primary floating-point types are:</p>
+    <ul>
+        <li><code>float</code> - Single precision (typically 4 bytes)</li>
+        <li><code>double</code> - Double precision (typically 8 bytes)</li>
+        <li><code>long double</code> - Extended precision (typically 8, 12, or 16 bytes depending on the platform)</li>
+    </ul>
+
+    <h2>Type Modifiers</h2>
+    <ul>
+        <li><code>signed</code> - Default for floating-point types; allows positive and negative values</li>
+        <li><code>const</code> - Declares a variable whose value cannot be changed</li>
+        <li><code>volatile</code> - Tells the compiler that the variable may be changed externally (e.g., by hardware)</li>
+    </ul>
+
+    <h2>Precision and Usage</h2>
+    <p>Precision is critical in robotics for tasks like sensor data processing, PID control, and kinematics. Use <code>float</code> for memory-constrained systems and <code>double</code> for higher precision.</p>
+
+    <h2>Examples in Robotics</h2>
+    <pre><code>// Sensor reading (e.g., temperature)
+const float temperature = 36.7f;
+
+// PID control values
+double kp = 0.1, ki = 0.01, kd = 0.05;
+
+// Volatile variable updated by an interrupt
+volatile float imu_angle;
+
+// Long double for high-precision calculations
+long double trajectory_time = 12.34567890123456789L;
+</code></pre>
+
+    <h2>Best Practices</h2>
+    <ul>
+        <li>Use <code>float</code> for embedded systems with limited resources</li>
+        <li>Use <code>double</code> for general-purpose robotics applications</li>
+        <li>Use <code>const</code> for values that should not change (e.g., constants)</li>
+        <li>Use <code>volatile</code> for variables shared with hardware or interrupt routines</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Understanding floating-point types and their modifiers is essential for writing efficient and accurate robotics software in C++14/17.</p>
+</body>
+</html>

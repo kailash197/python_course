@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Void Data Type in C++14/17</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Void Data Type in C++14/17</h1>
+
+    <h2>Definition</h2>
+    <p>The <code>void</code> data type in C++ represents the absence of any value. It is primarily used to indicate that a function does not return a value.</p>
+
+    <h2>Usage in Functions</h2>
+    <p>Functions declared with <code>void</code> do not return any value to the caller.</p>
+    <pre><code>void greet() {
+    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;
+}</code></pre>
+
+    <h2>Usage in Pointers</h2>
+    <p><code>void*</code> is a special type of pointer that can point to any data type. It is used for generic programming and low-level memory manipulation.</p>
+    <pre><code>void* ptr;
+int x = 10;
+ptr = &x; // ptr now points to an int</code></pre>
+
+    <h2>Best Practices</h2>
+    <ul>
+        <li>Use <code>void</code> for functions that perform actions but do not need to return a result.</li>
+        <li>Use <code>void*</code> cautiously, as it bypasses type safety. Always cast to the appropriate type before dereferencing.</li>
+        <li>Avoid using <code>void*</code> in high-level C++ code unless necessary for interfacing with C libraries or low-level operations.</li>
+    </ul>
+
+    <h2>Examples</h2>
+    <pre><code>// Function with void return type
+void displayMessage() {
+    std::cout &lt;&lt; "This function returns nothing." &lt;&lt; std::endl;
+}
+
+// Using void pointer
+void printValue(void* data, char type) {
+    if (type == 'i') {
+        std::cout &lt;&lt; *static_cast&lt;int*&gt;(data) &lt;&lt; std::endl;
+    }
+}</code></pre>
+
+    <h2>Conclusion</h2>
+    <p>The <code>void</code> type is essential in C++ for defining functions that do not return values and for creating generic pointers. Understanding its proper use is crucial for writing clean and safe C++ code.</p>
+</body>
+</html>

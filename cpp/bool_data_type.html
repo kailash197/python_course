@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bool Data Type in C++14/17</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1 { color: #2c3e50; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-left: 4px solid #3498db; }
+    </style>
+</head>
+<body>
+    <h1>bool Data Type in C++14/17</h1>
+    <p>The <code>bool</code> data type in C++ represents Boolean values: <code>true</code> and <code>false</code>. It is used primarily in conditional expressions and logical operations.</p>
+
+    <h2>Definition</h2>
+    <p><code>bool</code> is a built-in data type that can hold one of two values:</p>
+    <ul>
+        <li><code>true</code> (typically represented as 1)</li>
+        <li><code>false</code> (typically represented as 0)</li>
+    </ul>
+
+    <h2>Usage in Conditions</h2>
+    <pre><code>bool isReady = true;
+if (isReady) {
+    std::cout &lt;&lt; "System is ready!" &lt;&lt; std::endl;
+}</code></pre>
+
+    <h2>Logical Operations</h2>
+    <pre><code>bool a = true;
+bool b = false;
+
+bool result = a &amp;&amp; b; // false
+result = a || b;       // true
+result = !a;           // false</code></pre>
+
+    <h2>Conversions</h2>
+    <p>Any non-zero value is implicitly converted to <code>true</code>, and zero is converted to <code>false</code>.</p>
+    <pre><code>int x = 5;
+bool flag = x; // true
+
+x = 0;
+flag = x; // false</code></pre>
+
+    <h2>Best Practices</h2>
+    <ul>
+        <li>Use <code>bool</code> for flags and conditions instead of <code>int</code>.</li>
+        <li>Prefer explicit comparisons for clarity: <code>if (x == true)</code>.</li>
+        <li>Avoid using <code>bool</code> in arithmetic expressions.</li>
+    </ul>
+
+    <h2>Example</h2>
+    <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    bool isOnline = true;
+    if (isOnline) {
+        std::cout &lt;&lt; "Device is online." &lt;&lt; std::endl;
+    } else {
+        std::cout &lt;&lt; "Device is offline." &lt;&lt; std::endl;
+    }
+    return 0;
+}</code></pre>
+</body>
+</html>

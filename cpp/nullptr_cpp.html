@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nullptr in C++</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>nullptr in C++11 and Later</h1>
+
+    <h2>Definition</h2>
+    <p><code>nullptr</code> is a keyword introduced in C++11 to represent a null pointer constant. It provides a type-safe way to indicate that a pointer does not point to any object or function.</p>
+
+    <h2>Advantages Over <code>NULL</code></h2>
+    <ul>
+        <li><strong>Type Safety:</strong> <code>nullptr</code> has its own type (<code>std::nullptr_t</code>), preventing ambiguity in overload resolution.</li>
+        <li><strong>Clear Semantics:</strong> It clearly indicates a null pointer, unlike <code>NULL</code> which is typically defined as 0.</li>
+        <li><strong>Improved Overload Resolution:</strong> Functions overloaded for pointer and integer types can be resolved correctly using <code>nullptr</code>.</li>
+    </ul>
+
+    <h2>Usage Examples</h2>
+    <pre><code>// Example 1: Assigning nullptr
+int* ptr = nullptr;
+
+// Example 2: Function overload resolution
+void func(int);
+void func(char*);
+
+func(nullptr); // Calls func(char*) due to type safety
+</code></pre>
+
+    <h2>Type Safety Benefits</h2>
+    <p>Using <code>NULL</code> can lead to unexpected behavior in function overloads because it is just an integer constant. <code>nullptr</code> avoids this by being a distinct type.</p>
+
+    <h2>Best Practices</h2>
+    <ul>
+        <li>Always use <code>nullptr</code> instead of <code>NULL</code> or <code>0</code> for null pointers in modern C++.</li>
+        <li>Prefer <code>nullptr</code> in all pointer-related code to ensure clarity and type safety.</li>
+        <li>Update legacy code to use <code>nullptr</code> where applicable.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p><code>nullptr</code> is a safer and more expressive alternative to <code>NULL</code> in C++11 and later. It enhances code readability and prevents subtle bugs related to pointer and integer confusion.</p>
+</body>
+</html>

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pointers in C++14/17</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1, h2 { color: #2c3e50; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 4px; overflow-x: auto; }
+        .section { margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+    <h1>Pointers in C++14/17</h1>
+
+    <div class="section">
+        <h2>1. What is a Pointer?</h2>
+        <p>A pointer is a variable that stores the memory address of another variable.</p>
+        <pre><code>int a = 10;
+int* ptr = &a; // ptr holds the address of a</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>2. Pointer Syntax</h2>
+        <ul>
+            <li><code>*</code> is used to declare a pointer.</li>
+            <li><code>&</code> is used to get the address of a variable.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. Pointer Arithmetic</h2>
+        <p>Pointers can be incremented or decremented to traverse arrays.</p>
+        <pre><code>int arr[] = {1, 2, 3};
+int* p = arr;
+p++; // points to arr[1]</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>4. Null Pointers</h2>
+        <p>Use <code>nullptr</code> (introduced in C++11) to initialize a pointer that doesn't point to anything.</p>
+        <pre><code>int* p = nullptr;</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>5. Smart Pointers (C++14/17)</h2>
+        <p>Smart pointers manage memory automatically and help prevent memory leaks.</p>
+        <ul>
+            <li><code>std::unique_ptr</code> - sole ownership</li>
+            <li><code>std::shared_ptr</code> - shared ownership</li>
+        </ul>
+        <pre><code>#include &lt;memory&gt;
+
+std::unique_ptr&lt;int&gt; uptr = std::make_unique&lt;int&gt;(10);
+std::shared_ptr&lt;int&gt; sptr = std::make_shared&lt;int&gt;(20);</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>6. Pointers in Robotics</h2>
+        <ul>
+            <li>Accessing sensor data from memory-mapped registers</li>
+            <li>Dynamic memory allocation for sensor arrays</li>
+            <li>Efficient data passing in real-time control loops</li>
+        </ul>
+        <pre><code>void readSensor(int* data) {
+    // process sensor data
+}</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>7. Best Practices</h2>
+        <ul>
+            <li>Always initialize pointers.</li>
+            <li>Use <code>nullptr</code> instead of <code>NULL</code>.</li>
+            <li>Prefer smart pointers over raw pointers.</li>
+            <li>Avoid dangling pointers and memory leaks.</li>
+        </ul>
+    </div>
+</body>
+</html>

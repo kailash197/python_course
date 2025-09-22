@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>decltype in C++14/17</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1, h2 { color: #2c3e50; }
+        code { background-color: #f4f4f4; padding: 2px 6px; border-radius: 4px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 4px; overflow-x: auto; }
+        .section { margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+    <h1>decltype in C++14/17</h1>
+
+    <div class="section">
+        <h2>Definition</h2>
+        <p><code>decltype</code> is a keyword in C++ used to query the type of an expression at compile time. It enables type deduction without evaluating the expression.</p>
+    </div>
+
+    <div class="section">
+        <h2>Syntax</h2>
+        <pre><code>decltype(expression)</code></pre>
+        <p>Returns the type of the expression without evaluating it.</p>
+    </div>
+
+    <div class="section">
+        <h2>Use Cases</h2>
+        <ul>
+            <li>Type deduction in templates</li>
+            <li>Declaring variables with complex types</li>
+            <li>Writing generic code</li>
+            <li>Robotics: deducing types from sensor APIs or control functions</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Examples</h2>
+        <pre><code>int speed = 10;
+decltype(speed) velocity = 20; // velocity is of type int
+
+auto distance = 100.5;
+decltype(distance) range = 200.0; // range is of type double
+
+template&lt;typename T1, typename T2&gt;
+auto add(T1 a, T2 b) -&gt; decltype(a + b) {
+    return a + b;
+}</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Use <code>decltype</code> to simplify complex type declarations.</li>
+            <li>Combine with <code>auto</code> for powerful type inference.</li>
+            <li>In robotics, use <code>decltype</code> to deduce types from sensor data or control interfaces.</li>
+            <li>Be cautious with expressions that have side effects—<code>decltype</code> does not evaluate them.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Robotics Context</h2>
+        <p>In robotics programming, especially with ROS, <code>decltype</code> helps deduce types from message fields, sensor APIs, and mathematical operations without manually specifying types.</p>
+        <pre><code>auto sensor_value = getSensorReading();
+decltype(sensor_value) filtered_value = filter(sensor_value);</code></pre>
+    </div>
+
+</body>
+</html>

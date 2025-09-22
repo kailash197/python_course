@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>References in C++14/17</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1, h2 { color: #2c3e50; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-left: 4px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>References in C++14/17</h1>
+
+    <h2>Definition</h2>
+    <p>A reference in C++ is an alias for another variable. Once a reference is initialized to a variable, it cannot be changed to refer to another variable.</p>
+
+    <h2>Syntax</h2>
+    <pre><code>int a = 10;
+int& ref = a; // ref is a reference to a</code></pre>
+
+    <h2>Differences from Pointers</h2>
+    <ul>
+        <li>References must be initialized when declared; pointers can be null.</li>
+        <li>References cannot be reseated; pointers can point to different objects.</li>
+        <li>References use the same syntax as the original variable; pointers use <code>*</code> and <code>&</code>.</li>
+    </ul>
+
+    <h2>Usage in Robotics</h2>
+    <p>References are commonly used in robotics for:</p>
+    <ul>
+        <li><strong>Parameter Passing:</strong> Efficiently pass large sensor data structures to functions without copying.</li>
+        <li><strong>Actuator Control:</strong> Modify motor control parameters directly via reference.</li>
+        <li><strong>Real-time Systems:</strong> Avoid unnecessary memory allocations by using references.</li>
+    </ul>
+
+    <h2>Code Example</h2>
+    <pre><code>void updateMotorSpeed(int& speed) {
+    speed += 10;
+}
+
+int main() {
+    int motorSpeed = 50;
+    updateMotorSpeed(motorSpeed);
+    // motorSpeed is now 60
+}</code></pre>
+
+    <h2>Best Practices</h2>
+    <ul>
+        <li>Use <code>const</code> references when you don't want to modify the original variable.</li>
+        <li>Avoid dangling references by ensuring the referenced object outlives the reference.</li>
+        <li>Use references for performance-critical code where copying is expensive.</li>
+    </ul>
+</body>
+</html>

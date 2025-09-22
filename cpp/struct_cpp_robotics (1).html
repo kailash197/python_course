@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Struct in C++14/17 - Robotics Theme</title>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #00ffcc;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #00ffcc;
+            border-radius: 10px;
+            background-color: #1a1a1a;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+        code {
+            background-color: #222;
+            color: #00ffcc;
+            padding: 5px;
+            border-radius: 5px;
+            display: block;
+            margin-top: 10px;
+            white-space: pre-wrap;
+        }
+        ul {
+            list-style-type: square;
+        }
+    </style>
+</head>
+<body>
+    <h1>Struct in C++14/17</h1>
+
+    <div class="section">
+        <h2>🔧 What is a Struct?</h2>
+        <p>A <strong>struct</strong> in C++ is a user-defined data type that groups related variables under one name. It is commonly used to represent simple data structures.</p>
+    </div>
+
+    <div class="section">
+        <h2>📦 Syntax</h2>
+        <code>
+struct Sensor {
+    int id;
+    float reading;
+    bool active;
+};
+
+Sensor s1 = {1, 23.5, true};
+        </code>
+    </div>
+
+    <div class="section">
+        <h2>⚙️ Comparison with Class</h2>
+        <ul>
+            <li><strong>Struct</strong> members are <em>public</em> by default.</li>
+            <li><strong>Class</strong> members are <em>private</em> by default.</li>
+            <li>Both can have constructors, methods, and access specifiers.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🤖 Use in Robotics</h2>
+        <ul>
+            <li>Represent sensor data (e.g., LIDAR, IMU readings).</li>
+            <li>Group actuator parameters (e.g., motor speed, direction).</li>
+            <li>Store robot state information (e.g., position, velocity).</li>
+        </ul>
+        <code>
+struct RobotState {
+    float x, y, theta;
+    float velocity;
+    bool isAutonomous;
+};
+
+RobotState currentState = {0.0, 0.0, 0.0, 1.5, true};
+        </code>
+    </div>
+
+    <div class="section">
+        <h2>✅ Best Practices</h2>
+        <ul>
+            <li>Use structs for simple data grouping.</li>
+            <li>Prefer classes for encapsulation and behavior.</li>
+            <li>Use <code>constexpr</code> and <code>auto</code> where appropriate.</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Integral Types in C++14/17</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1, h2 { color: #2c3e50; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 4px; overflow-x: auto; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #eee; }
+    </style>
+</head>
+<body>
+    <h1>Integral Types in C++14/17</h1>
+
+    <h2>1. Character Types</h2>
+    <p>Character types are used to store single characters or Unicode code points.</p>
+    <table>
+        <tr><th>Type</th><th>Description</th><th>Typical Size</th><th>Example</th></tr>
+        <tr><td><code>char</code></td><td>Basic character type</td><td>1 byte</td><td><code>char c = 'A';</code></td></tr>
+        <tr><td><code>signed char</code></td><td>Signed variant of char</td><td>1 byte</td><td><code>signed char sc = -65;</code></td></tr>
+        <tr><td><code>unsigned char</code></td><td>Unsigned variant of char</td><td>1 byte</td><td><code>unsigned char uc = 200;</code></td></tr>
+        <tr><td><code>wchar_t</code></td><td>Wide character type</td><td>2 or 4 bytes</td><td><code>wchar_t wc = L'Ω';</code></td></tr>
+        <tr><td><code>char16_t</code></td><td>UTF-16 character</td><td>2 bytes</td><td><code>char16_t c16 = u'あ';</code></td></tr>
+        <tr><td><code>char32_t</code></td><td>UTF-32 character</td><td>4 bytes</td><td><code>char32_t c32 = U'𐍈';</code></td></tr>
+    </table>
+
+    <h2>2. Integer Types</h2>
+    <p>Integer types are used to store whole numbers. They come in signed and unsigned variants.</p>
+    <table>
+        <tr><th>Type</th><th>Description</th><th>Typical Size</th><th>Example</th></tr>
+        <tr><td><code>short</code></td><td>Short integer</td><td>2 bytes</td><td><code>short s = -12345;</code></td></tr>
+        <tr><td><code>unsigned short</code></td><td>Unsigned short integer</td><td>2 bytes</td><td><code>unsigned short us = 54321;</code></td></tr>
+        <tr><td><code>int</code></td><td>Standard integer</td><td>4 bytes</td><td><code>int i = 1000;</code></td></tr>
+        <tr><td><code>unsigned int</code></td><td>Unsigned integer</td><td>4 bytes</td><td><code>unsigned int ui = 2000;</code></td></tr>
+        <tr><td><code>long</code></td><td>Long integer</td><td>4 or 8 bytes</td><td><code>long l = 100000L;</code></td></tr>
+        <tr><td><code>unsigned long</code></td><td>Unsigned long integer</td><td>4 or 8 bytes</td><td><code>unsigned long ul = 200000UL;</code></td></tr>
+        <tr><td><code>long long</code></td><td>Long long integer</td><td>8 bytes</td><td><code>long long ll = 10000000000LL;</code></td></tr>
+        <tr><td><code>unsigned long long</code></td><td>Unsigned long long</td><td>8 bytes</td><td><code>unsigned long long ull = 20000000000ULL;</code></td></tr>
+    </table>
+
+    <h2>3. Best Practices</h2>
+    <ul>
+        <li>Use <code>std::int32_t</code>, <code>std::uint64_t</code> from <code>&lt;cstdint&gt;</code> for fixed-width integers.</li>
+        <li>Prefer <code>auto</code> when type is obvious to improve readability.</li>
+        <li>Use <code>char16_t</code> and <code>char32_t</code> for Unicode-aware applications.</li>
+        <li>Be cautious with signed/unsigned conversions to avoid bugs.</li>
+    </ul>
+
+    <h2>4. Example Code</h2>
+    <pre><code>#include &lt;iostream&gt;
+#include &lt;cstdint&gt;
+
+int main() {
+    char c = 'A';
+    wchar_t wc = L'Ω';
+    char16_t c16 = u'あ';
+    char32_t c32 = U'𐍈';
+
+    int i = 42;
+    unsigned long long big = 10000000000ULL;
+
+    std::cout &lt;&lt; "char: " &lt;&lt; c &lt;&lt; "\n";
+    std::wcout &lt;&lt; L"wchar_t: " &lt;&lt; wc &lt;&lt; L"\n";
+    std::cout &lt;&lt; "int: " &lt;&lt; i &lt;&lt; "\n";
+    std::cout &lt;&lt; "unsigned long long: " &lt;&lt; big &lt;&lt; "\n";
+
+    return 0;
+}
+</code></pre>
+
+</body>
+</html>

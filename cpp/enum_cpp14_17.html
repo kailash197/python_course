@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enumerations in C++14/17</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f8fb;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #eef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+        }
+        pre {
+            background-color: #eef;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            overflow-x: auto;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .highlight {
+            background-color: #dff0d8;
+            padding: 10px;
+            border-left: 4px solid #3c763d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enumerations in C++14/17</h1>
+
+    <div class="section">
+        <h2>What is an Enumeration?</h2>
+        <p>An <strong>enumeration</strong> (or <code>enum</code>) is a user-defined type consisting of a set of named integral constants. It improves code readability and maintainability by replacing magic numbers with meaningful names.</p>
+    </div>
+
+    <div class="section">
+        <h2>Syntax</h2>
+        <pre><code>enum Direction { NORTH, SOUTH, EAST, WEST };
+Direction d = NORTH;</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Scoped Enumerations: <code>enum class</code></h2>
+        <p>Introduced in C++11 and enhanced in C++14/17, <code>enum class</code> provides better type safety and avoids name clashes.</p>
+        <pre><code>enum class Mode { AUTO, MANUAL };
+Mode m = Mode::AUTO;</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Differences: <code>enum</code> vs <code>enum class</code></h2>
+        <ul>
+            <li><strong>enum</strong>: Implicitly converts to int, names are in global scope.</li>
+            <li><strong>enum class</strong>: No implicit conversion, names are scoped.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Use Cases in Robotics</h2>
+        <ul>
+            <li>Robot modes: <code>enum class Mode { IDLE, ACTIVE, ERROR };</code></li>
+            <li>Sensor states: <code>enum SensorState { OK, FAIL, TIMEOUT };</code></li>
+            <li>Direction control: <code>enum Direction { FORWARD, BACKWARD, LEFT, RIGHT };</code></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Best Practices</h2>
+        <div class="highlight">
+            <ul>
+                <li>Prefer <code>enum class</code> for type safety.</li>
+                <li>Use meaningful names for enum values.</li>
+                <li>Use <code>switch</code> statements to handle enum logic.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Example</h2>
+        <pre><code>enum class RobotState { IDLE, MOVING, CHARGING };
+
+void handleState(RobotState state) {
+    switch(state) {
+        case RobotState::IDLE: /* handle idle */ break;
+        case RobotState::MOVING: /* handle movement */ break;
+        case RobotState::CHARGING: /* handle charging */ break;
+    }
+}</code></pre>
+    </div>
+</body>
+</html>
